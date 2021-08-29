@@ -16,6 +16,10 @@
 		CC069FC726DB40DA005D660C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC069FC526DB40DA005D660C /* LaunchScreen.storyboard */; };
 		CC069FD226DB40DB005D660C /* citydiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FD126DB40DB005D660C /* citydiaryTests.swift */; };
 		CC069FDD26DB40DB005D660C /* citydiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FDC26DB40DB005D660C /* citydiaryUITests.swift */; };
+		CC069FEE26DB53DE005D660C /* ComplainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FED26DB53DE005D660C /* ComplainTableViewController.swift */; };
+		CC069FF026DB5423005D660C /* ComplainCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */; };
+		CC069FF226DB5450005D660C /* ComplainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */; };
+		CC069FF426DB5469005D660C /* ComplainAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		CC069FD826DB40DB005D660C /* citydiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = citydiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC069FDC26DB40DB005D660C /* citydiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = citydiaryUITests.swift; sourceTree = "<group>"; };
 		CC069FDE26DB40DB005D660C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC069FED26DB53DE005D660C /* ComplainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainTableViewController.swift; sourceTree = "<group>"; };
+		CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainCellTableViewCell.swift; sourceTree = "<group>"; };
+		CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainDetailViewController.swift; sourceTree = "<group>"; };
+		CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainAddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				CC069FBB26DB40D9005D660C /* NavigationController.swift */,
+				CC069FED26DB53DE005D660C /* ComplainTableViewController.swift */,
+				CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */,
+				CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */,
+				CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +301,10 @@
 				CC069FBC26DB40D9005D660C /* NavigationController.swift in Sources */,
 				CC069FB826DB40D9005D660C /* AppDelegate.swift in Sources */,
 				CC069FBA26DB40D9005D660C /* SceneDelegate.swift in Sources */,
+				CC069FF026DB5423005D660C /* ComplainCellTableViewCell.swift in Sources */,
+				CC069FF226DB5450005D660C /* ComplainDetailViewController.swift in Sources */,
+				CC069FEE26DB53DE005D660C /* ComplainTableViewController.swift in Sources */,
+				CC069FF426DB5469005D660C /* ComplainAddEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
