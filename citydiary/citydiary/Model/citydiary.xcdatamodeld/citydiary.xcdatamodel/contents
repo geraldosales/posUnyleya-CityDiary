@@ -3,7 +3,7 @@
     <entity name="Complain" representedClassName="Complain" syncable="YES" codeGenerationType="class">
         <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
-        <attribute name="picture" optional="YES" attributeType="Transformable"/>
+        <attribute name="picture" optional="YES" attributeType="Binary"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>

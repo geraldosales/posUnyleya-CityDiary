@@ -8,16 +8,30 @@
 import UIKit
 
 class ComplainCellTableViewCell: UITableViewCell {
+    @IBOutlet var pictureImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    private func clearAll() {
+        pictureImageView.image = nil
+        titleLabel.text?.clear()
+        locationLabel.text?.clear()
+    }
+
+    func prepare(with complain: Complain) {
+        clearAll()
+        if let image = complain.picture {
+            pictureImageView.image = UIImage(data:image)
+        }
+        titleLabel.text = complain.title
+        locationLabel.text = complain.location
+    }
 }

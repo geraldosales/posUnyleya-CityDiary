@@ -20,6 +20,9 @@
 		CC069FF026DB5423005D660C /* ComplainCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */; };
 		CC069FF226DB5450005D660C /* ComplainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */; };
 		CC069FF426DB5469005D660C /* ComplainAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */; };
+		CC555A8126DBEB9200ED3D25 /* LocalComplainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC555A8026DBEB9200ED3D25 /* LocalComplainManager.swift */; };
+		CC555A8326DBECC800ED3D25 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC555A8226DBECC800ED3D25 /* LocalStorage.swift */; };
+		CC555A8526DC118000ED3D25 /* String+clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC555A8426DC118000ED3D25 /* String+clear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainCellTableViewCell.swift; sourceTree = "<group>"; };
 		CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainDetailViewController.swift; sourceTree = "<group>"; };
 		CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainAddEditViewController.swift; sourceTree = "<group>"; };
+		CC555A8026DBEB9200ED3D25 /* LocalComplainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalComplainManager.swift; sourceTree = "<group>"; };
+		CC555A8226DBECC800ED3D25 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		CC555A8426DC118000ED3D25 /* String+clear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+clear.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				CC069FC326DB40DA005D660C /* Assets.xcassets */,
 				CC069FC526DB40DA005D660C /* LaunchScreen.storyboard */,
 				CC069FC826DB40DA005D660C /* Info.plist */,
+				CC555A8626DC118800ED3D25 /* Extensions */,
 			);
 			path = citydiary;
 			sourceTree = "<group>";
@@ -152,8 +159,8 @@
 			children = (
 				CC069FBB26DB40D9005D660C /* NavigationController.swift */,
 				CC069FED26DB53DE005D660C /* ComplainTableViewController.swift */,
-				CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */,
 				CC069FF126DB5450005D660C /* ComplainDetailViewController.swift */,
+				CC069FEF26DB5423005D660C /* ComplainCellTableViewCell.swift */,
 				CC069FF326DB5469005D660C /* ComplainAddEditViewController.swift */,
 			);
 			path = Controller;
@@ -163,8 +170,18 @@
 			isa = PBXGroup;
 			children = (
 				CC069FC026DB40D9005D660C /* citydiary.xcdatamodeld */,
+				CC555A8026DBEB9200ED3D25 /* LocalComplainManager.swift */,
+				CC555A8226DBECC800ED3D25 /* LocalStorage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CC555A8626DC118800ED3D25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC555A8426DC118000ED3D25 /* String+clear.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +315,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC069FC226DB40D9005D660C /* citydiary.xcdatamodeld in Sources */,
+				CC555A8326DBECC800ED3D25 /* LocalStorage.swift in Sources */,
 				CC069FBC26DB40D9005D660C /* NavigationController.swift in Sources */,
+				CC555A8526DC118000ED3D25 /* String+clear.swift in Sources */,
 				CC069FB826DB40D9005D660C /* AppDelegate.swift in Sources */,
 				CC069FBA26DB40D9005D660C /* SceneDelegate.swift in Sources */,
 				CC069FF026DB5423005D660C /* ComplainCellTableViewCell.swift in Sources */,
 				CC069FF226DB5450005D660C /* ComplainDetailViewController.swift in Sources */,
+				CC555A8126DBEB9200ED3D25 /* LocalComplainManager.swift in Sources */,
 				CC069FEE26DB53DE005D660C /* ComplainTableViewController.swift in Sources */,
 				CC069FF426DB5469005D660C /* ComplainAddEditViewController.swift in Sources */,
 			);

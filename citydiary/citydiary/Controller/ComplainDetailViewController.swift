@@ -8,6 +8,8 @@
 import UIKit
 
 class ComplainDetailViewController: UIViewController {
+    
+    var complain : Complain!
 
     override func viewDidLoad() {
         super.viewDidLoad()
