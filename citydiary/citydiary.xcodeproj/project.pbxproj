@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC069FB826DB40D9005D660C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FB726DB40D9005D660C /* AppDelegate.swift */; };
 		CC069FBA26DB40D9005D660C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FB926DB40D9005D660C /* SceneDelegate.swift */; };
-		CC069FBC26DB40D9005D660C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FBB26DB40D9005D660C /* ViewController.swift */; };
+		CC069FBC26DB40D9005D660C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069FBB26DB40D9005D660C /* NavigationController.swift */; };
 		CC069FBF26DB40D9005D660C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC069FBD26DB40D9005D660C /* Main.storyboard */; };
 		CC069FC226DB40D9005D660C /* citydiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC069FC026DB40D9005D660C /* citydiary.xcdatamodeld */; };
 		CC069FC426DB40DA005D660C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC069FC326DB40DA005D660C /* Assets.xcassets */; };
@@ -39,7 +39,7 @@
 		CC069FB426DB40D9005D660C /* citydiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = citydiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC069FB726DB40D9005D660C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC069FB926DB40D9005D660C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC069FBB26DB40D9005D660C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC069FBB26DB40D9005D660C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CC069FBE26DB40D9005D660C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC069FC126DB40D9005D660C /* citydiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = citydiary.xcdatamodel; sourceTree = "<group>"; };
 		CC069FC326DB40DA005D660C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,12 +103,12 @@
 			children = (
 				CC069FB726DB40D9005D660C /* AppDelegate.swift */,
 				CC069FB926DB40D9005D660C /* SceneDelegate.swift */,
-				CC069FBB26DB40D9005D660C /* ViewController.swift */,
-				CC069FBD26DB40D9005D660C /* Main.storyboard */,
+				CC069FEC26DB4816005D660C /* Model */,
+				CC069FEB26DB4806005D660C /* Controller */,
+				CC069FEA26DB47F6005D660C /* View */,
 				CC069FC326DB40DA005D660C /* Assets.xcassets */,
 				CC069FC526DB40DA005D660C /* LaunchScreen.storyboard */,
 				CC069FC826DB40DA005D660C /* Info.plist */,
-				CC069FC026DB40D9005D660C /* citydiary.xcdatamodeld */,
 			);
 			path = citydiary;
 			sourceTree = "<group>";
@@ -129,6 +129,30 @@
 				CC069FDE26DB40DB005D660C /* Info.plist */,
 			);
 			path = citydiaryUITests;
+			sourceTree = "<group>";
+		};
+		CC069FEA26DB47F6005D660C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC069FBD26DB40D9005D660C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC069FEB26DB4806005D660C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC069FBB26DB40D9005D660C /* NavigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CC069FEC26DB4816005D660C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC069FC026DB40D9005D660C /* citydiary.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC069FC226DB40D9005D660C /* citydiary.xcdatamodeld in Sources */,
-				CC069FBC26DB40D9005D660C /* ViewController.swift in Sources */,
+				CC069FBC26DB40D9005D660C /* NavigationController.swift in Sources */,
 				CC069FB826DB40D9005D660C /* AppDelegate.swift in Sources */,
 				CC069FBA26DB40D9005D660C /* SceneDelegate.swift in Sources */,
 			);
