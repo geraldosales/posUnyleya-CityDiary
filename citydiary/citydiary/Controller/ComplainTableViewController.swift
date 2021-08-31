@@ -83,6 +83,8 @@ class ComplainTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             vc.complain = dataManager.fetchedResultsController.object(at: indexPath)
             
+            
+            
         }
     }
 }
@@ -97,7 +99,7 @@ extension ComplainTableViewController: LocalComplainManagerDelegate {
     func saveResult(succeful: Bool, error: String?) {
         if !succeful {
             // deu erro na operção de exclusão
-            print(error)
+            print(error ?? "Erro ao obter a mensagem")
         }
     }
 }
