@@ -33,7 +33,10 @@ class ComplainCellTableViewCell: UITableViewCell {
         }
         titleLabel.text = complain.title
         if let date = complain.registeredAt {
-            registeredAtLabel.text = "Registrado em: \(date)"
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.locale = Locale(identifier: "pt-BR")
+            registeredAtLabel.text = "Registrado em: \(formatter.string(from: date))"
         }
     }
 }

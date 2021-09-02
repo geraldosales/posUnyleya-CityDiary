@@ -8,13 +8,13 @@
 import CoreData
 import Foundation
 
-protocol LocalComplainManagerDelegate{
+protocol LocalComplainManagerDelegate {
     func saveResult(succeful: Bool, error: String?)
 }
 
-class LocalComplainManager: LocalStorage{
+class LocalComplainManager: LocalStorage {
     var fetchedResultsController: NSFetchedResultsController<Complain>!
-    var delegate : LocalComplainManagerDelegate?
+    var delegate: LocalComplainManagerDelegate?
 
     static var shared: LocalComplainManager {
         return LocalComplainManager()
@@ -25,15 +25,14 @@ class LocalComplainManager: LocalStorage{
 
     func fetchAll(delegate: NSFetchedResultsControllerDelegate) {
         let fetchRequest: NSFetchRequest<Complain> = Complain.fetchRequest()
-        let sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        let sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "registeredAt", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = delegate
         try? fetchedResultsController.performFetch()
-
     }
-    
+
     func getNewComplain() -> Complain {
         return Complain(context: context)
     }
@@ -41,14 +40,13 @@ class LocalComplainManager: LocalStorage{
     func save() {
         do {
             try context.save()
-//            guard let delegate = delegate else { return }
             delegate?.saveResult(succeful: true, error: nil)
         } catch {
             print(error.localizedDescription)
             delegate?.saveResult(succeful: false, error: error.localizedDescription)
         }
     }
-    
+
     func delete(_ complain: Complain) {
         context.delete(complain)
         save()
