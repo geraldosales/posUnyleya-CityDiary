@@ -62,8 +62,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="locationLabel" destination="exu-He-mY2" id="wKE-XC-LRH"/>
                                     <outlet property="pictureImageView" destination="CZX-hO-a7o" id="EJ3-hn-GqH"/>
+                                    <outlet property="registeredAtLabel" destination="exu-He-mY2" id="wKE-XC-LRH"/>
                                     <outlet property="titleLabel" destination="OCF-YD-jbW" id="jtW-YJ-Pp6"/>
                                     <segue destination="0pO-tg-7UL" kind="show" identifier="ComplainDetailSegue" id="gQR-LJ-wT1"/>
                                 </connections>
@@ -203,7 +203,13 @@
                             <constraint firstItem="LoW-Dz-6LJ" firstAttribute="bottom" secondItem="CFH-Sk-sCK" secondAttribute="bottom" id="uyi-yE-iOK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detalhes" id="xeY-Gt-iM3"/>
+                    <navigationItem key="navigationItem" title="Detalhes" id="xeY-Gt-iM3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="utM-3C-c3e">
+                            <connections>
+                                <segue destination="Ogs-Mp-ey8" kind="show" identifier="ComplainEditSegue" id="vNX-Qf-Gjf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailTextView" destination="fJL-nf-pbS" id="7E1-3t-l97"/>
                         <outlet property="locationTextField" destination="Zo6-Tq-QeP" id="hNY-sE-M0B"/>
@@ -402,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCF-FO-cFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352.3364485981306" y="69.330453563714912"/>
+            <point key="canvasLocation" x="2369" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lst-G3-86A">
@@ -430,6 +436,9 @@
             <point key="canvasLocation" x="-401" y="83"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vNX-Qf-Gjf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.57300001382827759" blue="0.27000001072883606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

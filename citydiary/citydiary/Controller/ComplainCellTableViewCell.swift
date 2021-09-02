@@ -10,7 +10,7 @@ import UIKit
 class ComplainCellTableViewCell: UITableViewCell {
     @IBOutlet var pictureImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var registeredAtLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,15 +23,17 @@ class ComplainCellTableViewCell: UITableViewCell {
     private func clearAll() {
         pictureImageView.image = nil
         titleLabel.text?.clear()
-        locationLabel.text?.clear()
+        registeredAtLabel.text?.clear()
     }
 
     func prepare(with complain: Complain) {
         clearAll()
         if let image = complain.picture {
-            pictureImageView.image = UIImage(data:image)
+            pictureImageView.image = UIImage(data: image)
         }
         titleLabel.text = complain.title
-        locationLabel.text = complain.location
+        if let date = complain.registeredAt {
+            registeredAtLabel.text = "Registrado em: \(date)"
+        }
     }
 }

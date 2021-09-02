@@ -25,7 +25,10 @@ class ComplainAddEditViewController: UIViewController {
     @IBOutlet var pictureImageView: UIImageView!
     @IBOutlet var choosePictureButton: UIButton!
     @IBOutlet var confirmButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
+
+    
+    // MARK: - View
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +37,7 @@ class ComplainAddEditViewController: UIViewController {
         clearAll()
         prepareScreen()
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillSHow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -63,10 +65,12 @@ class ComplainAddEditViewController: UIViewController {
         scrollView.contentInset.bottom = 0
         scrollView.verticalScrollIndicatorInsets.bottom = 0
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    // MARK: - Methods
 
     private func clearAll() {
         titleTextField.text?.clear()
@@ -75,6 +79,7 @@ class ComplainAddEditViewController: UIViewController {
         pictureImageView.image = nil
         choosePictureButton.setTitle("Escolher uma imagem", for: .normal)
         confirmButton.setTitle(operation.rawValue, for: .normal)
+        navigationItem.title = operation.rawValue
     }
 
     private func prepareScreen() {
@@ -88,6 +93,15 @@ class ComplainAddEditViewController: UIViewController {
         }
         confirmButton.setTitle(operation.rawValue, for: .normal)
     }
+    
+    private func selectPicture(sourceType: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // MARK: - IBActions
 
     @IBAction func choosePicture(_ sender: UIButton) {
         let alert = UIAlertController(title: "Selecionar imagem", message: "Local para selecionar a imagem", preferredStyle: .actionSheet)
@@ -98,38 +112,27 @@ class ComplainAddEditViewController: UIViewController {
             }
             alert.addAction(cameraAction)
         }
-        
+
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { _ in
                 self.selectPicture(sourceType: .photoLibrary)
             }
             alert.addAction(libraryAction)
         }
-        
+
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let albumAction = UIAlertAction(title: "Album de fotos", style: .default) { _ in
                 self.selectPicture(sourceType: .savedPhotosAlbum)
             }
             alert.addAction(albumAction)
         }
-       
 
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
 
         present(alert, animated: true, completion: nil)
     }
-    
-    func selectPicture(sourceType: UIImagePickerController.SourceType) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = sourceType
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    
-    
-
+ 
     @IBAction func confimOperation(_ sender: UIButton) {
         if operation == .add {
             complain = dataManager.getNewComplain()
@@ -141,6 +144,7 @@ class ComplainAddEditViewController: UIViewController {
         complain.detail = detailTextView.text
         complain.location = locationTextField.text
         complain.picture = pictureImageView.image?.jpegData(compressionQuality: 1.0)
+        complain.registeredAt = Date()
 
         dataManager.save()
     }
@@ -165,8 +169,7 @@ extension ComplainAddEditViewController: LocalComplainManagerDelegate {
 }
 
 extension ComplainAddEditViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.originalImage] as? UIImage {
             pictureImageView.image = image
             choosePictureButton.setTitle(nil, for: .normal)
@@ -176,5 +179,4 @@ extension ComplainAddEditViewController: UIImagePickerControllerDelegate {
 }
 
 extension ComplainAddEditViewController: UINavigationControllerDelegate {
-    
 }

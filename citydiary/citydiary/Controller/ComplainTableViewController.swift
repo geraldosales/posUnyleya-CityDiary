@@ -19,17 +19,14 @@ class ComplainTableViewController: UITableViewController {
         return label
     }()
 
+    // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.fetchAll(delegate: self)
     }
 
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         label.text = "Nenhuma reclamação cadastrada"
@@ -82,9 +79,6 @@ class ComplainTableViewController: UITableViewController {
             let vc = segue.destination as! ComplainDetailViewController
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             vc.complain = dataManager.fetchedResultsController.object(at: indexPath)
-            
-            
-            
         }
     }
 }
